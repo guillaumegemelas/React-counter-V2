@@ -1,7 +1,10 @@
 const Counter = ({ counter, index, tab, setTab }) => {
   return (
+    //les 3 buttons qu'on doit afficher
+
     <div className="buttons">
       <section className="one">
+        {/* premier bouton "-" --------------------------------*/}
         <div className="firstbutton">
           <button
             className="min"
@@ -15,12 +18,14 @@ const Counter = ({ counter, index, tab, setTab }) => {
           </button>
         </div>
 
+        {/* deuxième bouton "counter" -------------------------*/}
         <div>
           <button className="coun">
             <span>{counter}</span>
           </button>
         </div>
 
+        {/* troisième bouton "+" -------------------------------*/}
         <div className="thirdbutton">
           <button
             className="add"
@@ -34,6 +39,8 @@ const Counter = ({ counter, index, tab, setTab }) => {
           </button>
         </div>
       </section>
+
+      {/* 4è bouton "reset" -----------------------------------*/}
       <section className="two">
         <div className="secondbutt">
           <button

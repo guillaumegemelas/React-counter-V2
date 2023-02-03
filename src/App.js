@@ -5,8 +5,6 @@ import Counter from "./Components/Counter";
 import logo from "./img/calc.png";
 
 function App() {
-  // const [counter, setCounter] = useState(0);
-  // const [addcounter, setAddCounter] = useState(1);
   //on va vouloir stocker dans un seul state une liste de nombres, donc faire un
   //tableau de nombres
 
@@ -21,6 +19,7 @@ function App() {
         <p>React counter V2</p>
       </header>
 
+      {/* bouton addcounter qui va déployer ay max 3 counters -------------*/}
       <main>
         <div
           className="addcounter1"
@@ -29,13 +28,14 @@ function App() {
               const newTab = [...tab];
               newTab.push(0);
               setTab(newTab);
-              console.log(newTab);
+              // console.log(newTab);
             }
           }}
         >
           <button className="addcounter">Add counter</button>
         </div>
 
+        {/* section renvoie au composant Counter ---------------------------*/}
         <div className="sectionOne">
           <div className="component">
             {tab.map((elem, index) => {
