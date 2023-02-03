@@ -5,7 +5,7 @@ import Counter from "./Components/Counter";
 import logo from "./img/calc.png";
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  // const [counter, setCounter] = useState(0);
   // const [addcounter, setAddCounter] = useState(1);
   //on va vouloir stocker dans un seul state une liste de nombres, donc faire un
   //tableau de nombres
@@ -20,27 +20,37 @@ function App() {
         </div>
         <p>React counter V2</p>
       </header>
-      <main>
-        <section>
-          <button
-            className="addcounter"
-            onClick={() => {
-              const newTab = [...tab];
 
+      <main>
+        <div
+          className="addcounter1"
+          onClick={() => {
+            if (tab.length < 3) {
+              const newTab = [...tab];
               newTab.push(0);
               setTab(newTab);
               console.log(newTab);
-            }}
-          >
-            Add counter
-          </button>
-        </section>
+            }
+          }}
+        >
+          <button className="addcounter">Add counter</button>
+        </div>
 
-        <section className="sectionOne">
+        <div className="sectionOne">
           <div className="component">
-            <Counter counter={counter} setCounter={setCounter} />
+            {tab.map((elem, index) => {
+              return (
+                <Counter
+                  key={index}
+                  index={index}
+                  counter={elem}
+                  tab={tab}
+                  setTab={setTab}
+                />
+              );
+            })}
           </div>
-        </section>
+        </div>
       </main>
       <footer>
         <p>

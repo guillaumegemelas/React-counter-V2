@@ -1,4 +1,4 @@
-const Counter = ({ counter, setCounter }) => {
+const Counter = ({ counter, index, tab, setTab }) => {
   return (
     <div className="buttons">
       <section className="one">
@@ -6,7 +6,9 @@ const Counter = ({ counter, setCounter }) => {
           <button
             className="min"
             onClick={() => {
-              setCounter(counter - 1);
+              const newTab = [...tab];
+              newTab[index] = newTab[index] - 1;
+              setTab(newTab);
             }}
           >
             -
@@ -23,7 +25,9 @@ const Counter = ({ counter, setCounter }) => {
           <button
             className="add"
             onClick={() => {
-              setCounter(counter + 1);
+              const newTab = [...tab];
+              newTab[index] = newTab[index] + 1;
+              setTab(newTab);
             }}
           >
             +
@@ -35,7 +39,9 @@ const Counter = ({ counter, setCounter }) => {
           <button
             className="reset"
             onClick={() => {
-              setCounter(0);
+              const newTab = [...tab];
+              newTab[index] = 0;
+              setTab(newTab);
             }}
           >
             Reset
