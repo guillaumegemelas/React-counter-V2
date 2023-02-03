@@ -7,8 +7,10 @@ import logo from "./img/calc.png";
 function App() {
   const [counter, setCounter] = useState(0);
   // const [addcounter, setAddCounter] = useState(1);
+  //on va vouloir stocker dans un seul state une liste de nombres, donc faire un
+  //tableau de nombres
 
-  const tab = [];
+  const [tab, setTab] = useState({ counter });
 
   return (
     <div className="App">
@@ -23,8 +25,12 @@ function App() {
           <button
             className="addcounter"
             onClick={() => {
-              for (let i = 0; i <= 3; i++) {
-                tab.push(<Counter counter={counter} setCounter={setCounter} />);
+              for (let i = 0; i < counter; i++) {
+                const newTab = [...tab];
+                newTab.push(
+                  <Counter counter={counter} setCounter={setCounter} />
+                );
+                setTab(newTab);
               }
             }}
           >
@@ -37,21 +43,6 @@ function App() {
             <Counter counter={counter} setCounter={setCounter} />
           </div>
         </section>
-
-        {/* {addcounter === 1 ? (
-          <section className="sectionOne">
-            <div className="component">
-              <Counter counter={counter} setCounter={setCounter} />
-            </div>
-          </section>
-        ) : (
-          <section className="sectionOne">
-            <div className="component">
-              <Counter counter={counter} setCounter={setCounter} />
-              <Counter counter={counter} setCounter={setCounter} />
-            </div>
-          </section>
-        )} */}
       </main>
       <footer>
         <p>
