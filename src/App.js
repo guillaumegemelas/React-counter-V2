@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Counter from "./Components/Counter";
+import Reset from "./Components/Reset";
+
+import logo from "./img/calc.png";
 
 function App() {
+  const [counter, setCounter] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <div className="logo">
+          <img src={logo} alt="" />
+        </div>
+        <p>React counter V2</p>
       </header>
+
+      <section className="sectionOne">
+        <div className="component">
+          <Counter counter={counter} setCounter={setCounter} />
+          <Reset setCounter={setCounter} />
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          Made with <span> React </span> at <span> Le Reacteur </span> by{" "}
+          <span> Guillaume</span>
+        </p>
+      </footer>
     </div>
   );
 }
