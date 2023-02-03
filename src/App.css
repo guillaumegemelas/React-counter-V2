@@ -20,30 +20,49 @@ header img {
 }
 
 /* section boutons--------------------------------------- */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* s-color: pink; */
+}
+
+.addcounter {
+  font-size: 20px;
+  color: aliceblue;
+  height: 60px;
+  width: 150px;
+  border-radius: 5px;
+  background-color: #5c48d3;
+  border: none;
+  margin-top: 90px;
+}
+
 .sectionOne {
   display: flex;
   /* background-color: pink; */
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 700px;
-}
-
-section .component {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 300px;
-  /* background-color: rgb(144, 144, 229); */
-  height: 300px;
+  height: 500px;
 }
 
 .buttons {
+  /* background-color: pink; */
+  width: 300px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+.one {
+  /* background-color: blue; */
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 }
 
 .min,
