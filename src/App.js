@@ -10,7 +10,7 @@ function App() {
   //on va vouloir stocker dans un seul state une liste de nombres, donc faire un
   //tableau de nombres
 
-  const [tab, setTab] = useState({ counter });
+  const [tab, setTab] = useState([0]);
 
   return (
     <div className="App">
@@ -25,13 +25,11 @@ function App() {
           <button
             className="addcounter"
             onClick={() => {
-              for (let i = 0; i < counter; i++) {
-                const newTab = [...tab];
-                newTab.push(
-                  <Counter counter={counter} setCounter={setCounter} />
-                );
-                setTab(newTab);
-              }
+              const newTab = [...tab];
+
+              newTab.push(0);
+              setTab(newTab);
+              console.log(newTab);
             }}
           >
             Add counter
