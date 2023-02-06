@@ -21,19 +21,19 @@ function App() {
 
       {/* bouton addcounter qui va déployer ay max 3 counters -------------*/}
       <main>
-        <div
-          className="addcounter1"
-          onClick={() => {
-            if (tab.length < 3) {
+        {tab.length < 3 && (
+          <div
+            className="addcounter1"
+            onClick={() => {
               const newTab = [...tab];
               newTab.push(0);
               setTab(newTab);
               // console.log(newTab);
-            }
-          }}
-        >
-          <button className="addcounter">Add counter</button>
-        </div>
+            }}
+          >
+            <button className="addcounter">Add counter</button>
+          </div>
+        )}
 
         {/* section renvoie au composant Counter ---------------------------*/}
         <div className="sectionOne">
